@@ -1,1 +1,27 @@
+Easy Assignment: Logging Middleware
+Task:
+Create a middleware function that logs the method and URL of every incoming request.
+Apply this middleware globally to all routes.
+Create two routes: /home and /contact.
+When a request is made, the console should log something like GET /home.
+Use console.log() inside the middleware.
+Do not use any external packages.
+This task helps understand how middleware sits between the request and the response.
 
+Medium Assignment: Ticket Checking Middleware
+Task:
+Create a middleware function named checkTicket.
+It should check if the query ticket=yes exists.
+If yes, call next() to move to the route handler.
+If not, return a JSON message: { message: "No ticket found" }.
+Apply this middleware only to the /ride route.
+This helps you understand conditional access using middleware.
+
+Difficult Assignment: Auth Middleware Chain
+Task:
+Create two middleware functions: checkToken and checkRole.
+checkToken should check if token=admin123 exists in query and set req.user = { role: "admin" }.
+checkRole should check if req.user.role === "admin"; if not, return forbidden.
+Apply both middlewares to the /admin route.
+If valid, return: { message: "Welcome Admin" }.
+Practice chaining multiple middleware functions in order.
